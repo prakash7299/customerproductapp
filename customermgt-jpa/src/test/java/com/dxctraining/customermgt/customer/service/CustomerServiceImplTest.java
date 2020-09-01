@@ -13,30 +13,30 @@ import com.dxctraining.customermgt.customer.entities.Customer;
 public class CustomerServiceImplTest {
 
 	@Autowired
-	private ICustomerService supplierService;
+	private ICustomerService service;
 
 	@Test
 	public void testSave_1() {
 		String name = "prakash";
-		Customer supplier1 = new Customer(name);
-		supplier1 = supplierService.add(supplier1);
-		int id = supplier1.getId();
-		Customer fetched = supplierService.findById(id);
-		Assertions.assertEquals(supplier1.getId(), fetched.getId());
-		Assertions.assertEquals(supplier1.getName(), fetched.getName());
+		Customer customer = new Customer(name);
+		customer = service.add(customer);
+		int id = customer.getId();
+		Customer fetched = service.findById(id);
+		Assertions.assertEquals(customer.getId(), fetched.getId());
+		Assertions.assertEquals(customer.getName(), fetched.getName());
 
 	}
 
 	@Test
 	public void testFindById_1() {
 		String name = "praveen";
-		Customer supplier1 = new Customer(name);
-		supplier1 = supplierService.add(supplier1);
-		int id = supplier1.getId();
-		Customer fetched = supplierService.findById(id);
-		Assertions.assertEquals(supplier1.getId(), fetched.getId());
-		Assertions.assertEquals(supplier1.getName(), fetched.getName());
+		Customer customer = new Customer(name);
+		customer = service.add(customer);
+		int id = customer.getId();
+		Customer fetched = service.findById(id);
+		Assertions.assertEquals(customer.getId(), fetched.getId());
+		Assertions.assertEquals(customer.getName(), fetched.getName());
 
 	}
-
+	
 }
