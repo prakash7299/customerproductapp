@@ -1,6 +1,7 @@
-package com.dxctraining.customermgt.customer.dto;
+package com.dxctraining.wisheditemmgt.wisheditem.dto;
 
 public class CustomerDto {
+	
 	private Integer id;
 	private String cname;
 	public Integer getId() {
@@ -15,4 +16,6 @@ public class CustomerDto {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
+	
+
 }

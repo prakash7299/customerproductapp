@@ -30,7 +30,7 @@ public class CustomerRestController {
 	@PostMapping("/add")
 	@ResponseStatus(HttpStatus.CREATED)
 	public CustomerDto create(@RequestBody CreateCustomerRequest data) {
-		Customer customer = new Customer(data.getName());
+		Customer customer = new Customer(data.getCname());
 		customer = service.add(customer);
 		CustomerDto response = toDto(customer);
 		return response;
@@ -43,9 +43,9 @@ public class CustomerRestController {
 		return dto;
 	}
 
-	@GetMapping("/find/{name}")
-	public CustomerDto findByName(@PathVariable("name") String name) {
-		List<Customer> customer = service.findByName(name);
+	@GetMapping("/find/{cname}")
+	public CustomerDto findByName(@PathVariable("cname") String cname) {
+		List<Customer> customer = service.findByCname(cname);
 		CustomerDto dto = toDto(customer.get(0));
 		return dto;
 
@@ -53,7 +53,7 @@ public class CustomerRestController {
 
 	@PutMapping("/update")
 	public CustomerDto updateCustomer(@RequestBody UpdateCustomerRequest data) {
-		Customer customer = new Customer(data.getName());
+		Customer customer = new Customer(data.getCname());
 		customer.setId(data.getId());
 		customer = service.add(customer);
 		CustomerDto dto = toDto(customer);
@@ -68,7 +68,7 @@ public class CustomerRestController {
 	public CustomerDto toDto(Customer customer) {
 		CustomerDto dto = new CustomerDto();
 		dto.setId(customer.getId());
-		dto.setName(customer.getName());
+		dto.setCname(customer.getCname());
 		return dto;
 	}
 

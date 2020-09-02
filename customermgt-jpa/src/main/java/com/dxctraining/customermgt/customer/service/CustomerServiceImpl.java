@@ -35,8 +35,8 @@ public class CustomerServiceImpl implements ICustomerService {
 	}
 
 	@Override
-	public List<Customer> findByName(String name) {
-		List<Customer> customer = dao.findByName(name);
+	public List<Customer> findByCname(String cname) {
+		List<Customer> customer = dao.findByCname(cname);
 		return customer;
 	}
 

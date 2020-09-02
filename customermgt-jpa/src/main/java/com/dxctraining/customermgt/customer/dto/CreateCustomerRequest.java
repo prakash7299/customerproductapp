@@ -1,14 +1,14 @@
 package com.dxctraining.customermgt.customer.dto;
 
 public class CreateCustomerRequest {
-	private String name;
+	private String cname;
 
-	public String getName() {
-		return name;
+	public String getCname() {
+		return cname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 	
 

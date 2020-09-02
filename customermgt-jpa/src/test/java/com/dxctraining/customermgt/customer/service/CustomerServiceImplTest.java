@@ -26,7 +26,7 @@ public class CustomerServiceImplTest {
 		int id = customer.getId();
 		Customer fetched = service.findById(id);
 		Assertions.assertEquals(customer.getId(), fetched.getId());
-		Assertions.assertEquals(customer.getName(), fetched.getName());
+		Assertions.assertEquals(customer.getCname(), fetched.getCname());
 
 	}
 
@@ -38,7 +38,7 @@ public class CustomerServiceImplTest {
 		int id = customer.getId();
 		Customer fetched = service.findById(id);
 		Assertions.assertEquals(customer.getId(), fetched.getId());
-		Assertions.assertEquals(customer.getName(), fetched.getName());
+		Assertions.assertEquals(customer.getCname(), fetched.getCname());
 
 	}
 	
@@ -47,10 +47,10 @@ public class CustomerServiceImplTest {
 		String name="karthik";
 		Customer customer=new Customer(name);
 		customer=service.add(customer);
-		String cname=customer.getName();
-		List<Customer> fetched=service.findByName(cname);
+		String cname=customer.getCname();
+		List<Customer> fetched=service.findByCname(cname);
 		Assertions.assertEquals(customer.getId(), fetched.get(0).getId());
-		Assertions.assertEquals(customer.getName(),fetched.get(0).getName());
+		Assertions.assertEquals(customer.getCname(),fetched.get(0).getCname());
 		
 	}
 	

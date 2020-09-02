@@ -14,14 +14,14 @@ public class Customer {
 	@GeneratedValue
 	private Integer id;
 
-	private String name;
+	private String cname;
 
 	public Customer() {
 
 	}
 
-	public Customer(String name) {
-		this.name = name;
+	public Customer(String cname) {
+		this.cname = cname;
 	}
 
 	public Integer getId() {
@@ -32,12 +32,12 @@ public class Customer {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getCname() {
+		return cname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 
 	@Override

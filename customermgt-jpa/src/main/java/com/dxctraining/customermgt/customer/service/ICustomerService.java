@@ -10,5 +10,5 @@ public interface ICustomerService {
     Customer add(Customer customer);
     void removeById(Integer id);
     List<Customer> allCustomer();
-    List<Customer> findByName(String name);
+    List<Customer> findByCname(String cname);
 }

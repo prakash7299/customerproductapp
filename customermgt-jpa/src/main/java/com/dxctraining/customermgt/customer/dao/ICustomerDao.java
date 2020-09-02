@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.dxctraining.customermgt.customer.entities.Customer;
 
 public interface ICustomerDao extends JpaRepository<Customer,Integer>{
-	List<Customer> findByName(String name);
+	List<Customer> findByCname(String cname);
  
 }
