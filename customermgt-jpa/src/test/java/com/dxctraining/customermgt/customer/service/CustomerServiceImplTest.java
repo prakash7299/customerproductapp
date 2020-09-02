@@ -1,5 +1,8 @@
 package com.dxctraining.customermgt.customer.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +41,18 @@ public class CustomerServiceImplTest {
 		Assertions.assertEquals(customer.getName(), fetched.getName());
 
 	}
+	
+	@Test
+	public void findByName_1() {
+		String name="karthik";
+		Customer customer=new Customer(name);
+		customer=service.add(customer);
+		String cname=customer.getName();
+		List<Customer> fetched=service.findByName(cname);
+		Assertions.assertEquals(customer.getId(), fetched.get(0).getId());
+		Assertions.assertEquals(customer.getName(),fetched.get(0).getName());
+		
+	}
+	
 	
 }
