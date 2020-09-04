@@ -13,10 +13,8 @@ import com.dxctraining.wisheditemmgt.wisheditem.entities.WishedItem;
 public class WishItemUtil {
 	
 	public WishedItemDto wishItemDto(WishedItem wishedItem,int customerId,String cname,String productId,String pname) {
-		WishedItemDto dto=new WishedItemDto(wishedItem.getId());
-		dto.setCustomerId(customerId);
+		WishedItemDto dto=new WishedItemDto(wishedItem.getId(),customerId,productId);
 		dto.setCname(cname);
-		dto.setProductId(productId);
 		dto.setPname(pname);
 		return dto;
 	}

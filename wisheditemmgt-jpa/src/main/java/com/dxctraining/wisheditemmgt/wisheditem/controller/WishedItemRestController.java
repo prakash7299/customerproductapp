@@ -42,7 +42,7 @@ public class WishedItemRestController {
 	@PostMapping("/add")
 	@ResponseStatus(HttpStatus.CREATED)
 	public WishedItemDto createWishItem(@RequestBody CreateWishedItemRequest data) {
-		WishedItem wishedItem = new WishedItem(data.getId(),data.getCustomerId(),data.getProductId());
+		WishedItem wishedItem = new WishedItem(data.getCustomerId(),data.getProductId());
 		wishedItem = service.add(wishedItem);
 		CustomerDto customer = fetchAllCustomersById(data.getCustomerId());
 		ProductDto product=fetchAllProductsById(data.getProductId());
@@ -77,13 +77,13 @@ public class WishedItemRestController {
 	}
 
 	public CustomerDto fetchAllCustomersById(int customerId) {
-        String url = "http://localhost:8586/customers/get/" + customerId;
+        String url = "http://customermgt/customers/get/" + customerId;
         CustomerDto dto = restTemplate.getForObject(url, CustomerDto.class);
         return dto;
     }
 	
 	public ProductDto fetchAllProductsById(String productId) {
-        String url = "http://localhost:8587/products/get/" + productId;
+        String url = "http://productmgt/products/get/" + productId;
         ProductDto dto = restTemplate.getForObject(url, ProductDto.class);
         return dto;
     }

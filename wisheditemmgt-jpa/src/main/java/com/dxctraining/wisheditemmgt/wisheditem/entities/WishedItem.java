@@ -21,8 +21,7 @@ public class WishedItem {
 		
 	}
 	
-	public WishedItem(String id,Integer customerId,String productId) {
-		this.id=id;
+	public WishedItem(Integer customerId,String productId) {
 		this.customerId=customerId;
 		this.productId=productId;
 	}

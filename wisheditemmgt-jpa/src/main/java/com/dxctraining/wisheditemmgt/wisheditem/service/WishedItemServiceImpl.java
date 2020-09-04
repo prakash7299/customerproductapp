@@ -32,6 +32,10 @@ public class WishedItemServiceImpl implements IWishedItemService {
 
 	@Override
 	public WishedItem add(WishedItem wishedItem) {
+		String customerId=wishedItem.getCustomerId().toString();
+		String productId=wishedItem.getProductId();
+		String wishedId=customerId+productId;
+		wishedItem.setId(wishedId);
 		wishedItem = dao.save(wishedItem);
 		return wishedItem;
 	}

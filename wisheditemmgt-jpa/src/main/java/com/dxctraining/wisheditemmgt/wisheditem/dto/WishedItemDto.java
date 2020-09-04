@@ -12,8 +12,10 @@ public class WishedItemDto {
 		
 	}
 	
-	public WishedItemDto(String id) {
+	public WishedItemDto(String id,Integer customerId,String productId) {
 		this.id=id;
+		this.customerId=customerId;
+		this.productId=productId;
 	}
 	public String getId() {
 		return id;
