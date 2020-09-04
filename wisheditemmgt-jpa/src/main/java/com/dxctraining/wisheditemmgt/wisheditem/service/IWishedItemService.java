@@ -13,4 +13,5 @@ public interface IWishedItemService {
     WishedItem update(WishedItem wishedItem);
     void removeById(String id);
     List<WishedItem> allWishedItem();
+    List<WishedItem> findByCustomerId(Integer customerId);
 }

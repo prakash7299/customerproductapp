@@ -29,6 +29,11 @@ public class WishedItemServiceImpl implements IWishedItemService {
 		WishedItem wishedItem = optional.get();
 		return wishedItem;
 	}
+	@Override
+	public List<WishedItem> findByCustomerId(Integer customerId){
+		List<WishedItem> wishedItem=dao.findByCustomerId(customerId);
+		return wishedItem;
+	}
 
 	@Override
 	public WishedItem add(WishedItem wishedItem) {
